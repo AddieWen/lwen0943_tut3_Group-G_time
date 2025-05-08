@@ -1,37 +1,28 @@
-# lwen0943_9103_tut3
-This is my first repository
+# Quiz 8
 
-# Header 1
-## Header 2
-### Header 3
-#### Header 4
-##### Header 5
-###### Header 6
+## Part 1: Imaging Technique Inspiration
 
-**Bold Text** or __Bold Text__
-*Italic Text* or _Italic Text_
+**Inspiration Source: Yayoi Kusama – Infinity Mirrored Room: Love Forever (2014)**
 
-- Item 1
-- Item 2
-  - Subitem 2.1
-  - Subitem 2.2
+Yayoi Kusama's immersive rooms use mirrored repetition and polka-dot motifs to generate sensory complexity and spatial expansion. I’m inspired by her use of color repetition and layering to reimagine Pacita Abad’s *Wheels of Fortune* as dynamic, rhythmically patterned digital forms that reflect cultural symbolism and variation.
 
-1. First Item
-2. Second Item
-3. Third Item
+![An image of the Kusama Infinity Room](ps_project\assets\kusama_the_souls_of_millions_1.jpg.webp)
+*Yayoi Kusama, Infinity Mirrored Room – Love Is Calling (2013)*
 
-[Link Text](https://www.google.com)
+![An image of the Kusama Infinity Room](ps_project\assets\1225334.jpg)
+*Pacita Abad – Wheels of Fortune*
 
-![An image of a cat](https://placekitten.com/200/300)
+## Part 2: Coding Technique Exploration
 
-![An image of the Mona Lisa](readmeImages/Mona_Lisa_by_Leonardo_da_Vinci_500_x_700.jpg)
+**Technique**: Array Functions in p5.js  
+**Reference**: [p5.js Array Functions Tutorial](https://happycoding.io/tutorials/p5js/array-functions)
 
-```
-function helloWorld() {
-console.log("Hello, world!");
-}
-```
+Array functions allow me to efficiently generate repeated circular forms with controlled randomness—mimicking Kusama's modular repetition and Abad's rhythmic dot systems. Each "wheel" becomes a unique object with variations in color, size, and density.
 
-I can write a sentence referencing 'helloworld()' like this.
+![An image of the example using array of objects](ps_project\assets\ae361b82f1a74167fb5843ddcb2837da.gif)  
+*Array-based object pattern*
 
-> This is a blockquote.
+![An image of the second example using array of objects](ps_project/assets/Rotational%20fluctuation.gif)
+*Array-based object pattern 2*
+
+[→ See tutorial and code example](https://happycoding.io/tutorials/p5js/array-functions)
