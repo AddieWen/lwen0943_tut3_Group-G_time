@@ -2,15 +2,15 @@
 
 ## Part 1: Imaging Technique Inspiration
 
-**Inspiration Source: Yayoi Kusama – Infinity Mirrored Room: Love Forever (2014)**
+**Yayoi Kusama, Infinity Mirrored Room –The Souls of Millions of Light Years Away, 2013**
 
 Yayoi Kusama's immersive rooms use mirrored repetition and polka-dot motifs to generate sensory complexity and spatial expansion. I’m inspired by her use of color repetition and layering to reimagine Pacita Abad’s *Wheels of Fortune* as dynamic, rhythmically patterned digital forms that reflect cultural symbolism and variation.
 
 ![An image of the Kusama Infinity Room](ps_project/assets/kusama_the_souls_of_millions_1.jpg.webp)
-*Yayoi Kusama, Infinity Mirrored Room – Love Is Calling (2013)*
+*Yayoi Kusama, Infinity Mirrored Room –The Souls of Millions of Light Years Away (2013)*
 
 ![An image of the Kusama Infinity Room](ps_project/assets/1225334.jpg)
-*Yayoi Kusama, Infinity Mirrored Room – Love Is Calling (2013)*
+*Yayoi Kusama, Infinity Mirrored Room –The Souls of Millions of Light Years Away (2013)*
 
 ## Part 2: Coding Technique Exploration
 
