@@ -22,7 +22,7 @@ Array functions allow me to efficiently generate repeated circular forms with co
 ![An image of the example using array of objects](image/ae361b82f1a74167fb5843ddcb2837da.gif)  
 *Array-based object pattern*
 
-![An image of the second example using array of objects](image/Rotational fluctuation.gifgif)
+![An image of the second example using array of objects](image/Rotational_fluctuation.gif)
 *Array-based object pattern 2*
 
 [> Link tutorial and code example](https://happycoding.io/tutorials/p5js/array-functions)

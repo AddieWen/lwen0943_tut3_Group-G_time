@@ -46,7 +46,7 @@ function preload() {
 function setup() {
     createCanvas(imgSize * 2 + padding, imgSize);
     //referenceImg.resize(imgSize, imgSize); // make both 500
-    noLoop();
+    //noLoop(); // Remove and enable draw loop refresh
 
     //set circle and its docoration
     setupCircle();
@@ -391,13 +391,18 @@ class DotRing {//set dot circle logic
         fill(this.col);
 
         for (let i = 0; i < this.rows; i++) {
+            // Respiratory pulsation: Use sin() to dynamically control the radius fluctuation
+    let pulse = sin(frameCount * 0.05 + i) * 2;
+
             // The radius of the current circle
-            const r = lerp(
+            const baseR = lerp(
                 this.innerR + this.dotDiam * 0.5,
                 this.outerR - this.dotDiam * 0.5,
                 i / (this.rows - 1)
             );
 
+            const r = baseR + pulse; // The breathing effect is applied to the radius itself
+            
             // Calculate how many points are needed in this circle based on the circumference
             const numDots = floor((TWO_PI * r) / (this.dotDiam * 1.6));
 
