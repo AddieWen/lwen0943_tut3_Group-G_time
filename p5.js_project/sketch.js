@@ -392,7 +392,7 @@ class DotRing {//set dot circle logic
 
         for (let i = 0; i < this.rows; i++) {
             // Respiratory pulsation: Use sin() to dynamically control the radius fluctuation
-    let pulse = sin(frameCount * 0.05 + i) * 2;
+            let pulse = sin(frameCount * 0.05 + i) * 2;
 
             // The radius of the current circle
             const baseR = lerp(
@@ -402,7 +402,7 @@ class DotRing {//set dot circle logic
             );
 
             const r = baseR + pulse; // The breathing effect is applied to the radius itself
-            
+
             // Calculate how many points are needed in this circle based on the circumference
             const numDots = floor((TWO_PI * r) / (this.dotDiam * 1.6));
 
@@ -479,6 +479,8 @@ class ChainLink {
         this.p2 = createVector(...p2); // vector from second endpoint
         this.steps = steps;            // how many step between two point
         this.thickness = thickness;    // step size
+        this.color = getRandomChainColor();  // Set the initial color to a random value (each chain has its own color)
+        this.lastUpdateFrame = 0;            // Record the number of frames of the last color update (used to update the color once per second)
     }
 
     display() {
@@ -499,7 +501,12 @@ class ChainLink {
             rotate(dir.heading());
             stroke('#D26728');
             strokeWeight(1.5);
-            fill(random(255), random(255), random(255));
+            //
+            if (frameCount - this.lastUpdateFrame > 60) { // If more than 60 frames have passed since the last color update
+                this.color = getRandomChainColor();       // Specify a new random color
+                this.lastUpdateFrame = frameCount;        // Update the record of the last color change to the current frameCount
+            }
+            fill(this.color);                             // Draw using the current color of this chain
             ellipse(0, 0, ellipseWidth, this.thickness);
             pop();
         }
@@ -517,4 +524,9 @@ class ChainLink {
         fill(255);
         circle(p.x, p.y, 10);
     }
+}
+
+// Return a random RGB color
+function getRandomChainColor() {
+    return color(random(255), random(255), random(255));
 }
