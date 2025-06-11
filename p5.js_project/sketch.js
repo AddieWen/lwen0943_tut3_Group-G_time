@@ -350,6 +350,11 @@ class PinkCurveSet {//set pink curve log
         const ctrlX = midX - Math.sign(x4 - x1) * this.offset;
 
         //using quadraticVertex
+        // WE learned about this code through interaction with the teacher in class,
+        //  and decided to use it after checking the p5.js website and interacting with chatgpt. 
+        // The principle itself is to use two coordinates for the starting point,
+        //  two coordinates for the stretching position, 
+        // and two coordinates for the end point.
         push();
         stroke(255, 28, 90);
         strokeWeight(5);
@@ -398,7 +403,6 @@ class DotRing {//set dot circle logic
             // Respiratory pulsation: Use sin() to dynamically control the radius fluctuation
             let pulse = sin(frameCount * 0.05 + i) * 2;
 
-            // The radius of the current circle
             const baseR = lerp(
                 this.innerR + this.dotDiam * 0.5,
                 this.outerR - this.dotDiam * 0.5,
@@ -414,8 +418,9 @@ class DotRing {//set dot circle logic
             const dynamicB = constrain(b + pulse * 30, 0, 100);
             fill(h, s, dynamicB);
 
-            for (let j = 0; j < numDots; j++) {
-                const ang = (TWO_PI * j) / numDots;
+            for (let j = 0; j < numDots; j++) { //the calculated function was help by chatgpt
+                const ang = (TWO_PI * j) / numDots;//Calculate the angle of each point to ensure equal spacing
+                //Calculate the position by using polar coordinates to Cartesian coordinates
                 const dx = this.x + r * cos(ang);
                 const dy = this.y + r * sin(ang);
                 circle(dx, dy, this.dotDiam);
@@ -466,7 +471,12 @@ class SpokeRing {//set spoke ring logic
                 i % 2 === 0
                     ? this.outerR - outerOffset
                     : this.innerR + innerOffset;
-
+// When thinking about how to implement this complex code, 
+// We learned about the vertex() code through a conversation with chatgpt. 
+// When searching the p5.js related website, 
+// I found that this is a good choice. 
+// By calculating the arc, the coordinates of each vertex can
+// be obtained to form a perfect spoke pattern.
             vertex(
                 this.x + radius * cos(ang),
                 this.y + radius * sin(ang)
@@ -509,13 +519,14 @@ class ChainLink {
             rotate(dir.heading());
             stroke('#D26728');
             strokeWeight(1.5);
-            //
+
             if (frameCount - this.lastUpdateFrame > 60) { // If more than 60 frames have passed since the last color update
                 this.color = getRandomChainColor();       // Specify a new random color
                 this.lastUpdateFrame = frameCount;        // Update the record of the last color change to the current frameCount
             }
             fill(this.color);                             // Draw using the current color of this chain
-            ellipse(0, 0, ellipseWidth, this.thickness);
+            ellipse(0, 0, ellipseWidth, this.thickness);  //The course did not mention elliptic functions in detail,
+      //but p5 actually provides them and they are used similarly to circle or other graphic functions.
             pop();
         }
         // draw anchor dots at both ends
