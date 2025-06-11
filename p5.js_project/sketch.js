@@ -388,7 +388,11 @@ class DotRing {//set dot circle logic
     display() { //set what look like
         push();
         noStroke();
-        fill(this.col);
+        colorMode(HSB, 360, 100, 100); // Change to use the HSB mode for convenient adjustment of brightness
+        // Extract the HSB component of the original color
+        const h = hue(this.col);
+        const s = saturation(this.col);
+        const b = brightness(this.col);
 
         for (let i = 0; i < this.rows; i++) {
             // Respiratory pulsation: Use sin() to dynamically control the radius fluctuation
@@ -405,6 +409,10 @@ class DotRing {//set dot circle logic
 
             // Calculate how many points are needed in this circle based on the circumference
             const numDots = floor((TWO_PI * r) / (this.dotDiam * 1.6));
+
+            // Adjust the brightness according to pulse
+            const dynamicB = constrain(b + pulse * 30, 0, 100);
+            fill(h, s, dynamicB);
 
             for (let j = 0; j < numDots; j++) {
                 const ang = (TWO_PI * j) / numDots;
